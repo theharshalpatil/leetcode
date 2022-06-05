@@ -56,3 +56,23 @@ class Solution {
         return -1;
     }
 }
+
+/**
+ * Two passes with counting
+ * First pass - count all the occuring characters in the string in int[26] seen
+ * Second pass - go through string and return the idx of first char that has seen[i - 'a'] == 1
+ * TC: O(N)
+ * SC: O(1) -> seen is just of len 26
+ */
+ class Solution {
+    public int firstUniqChar(String s) {
+        int[] seen = new int[26];
+        for (char c: s.toCharArray()) {
+            seen[c - 'a']++;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (seen[s.charAt(i) - 'a'] == 1) return i; 
+        }
+        return -1;
+    }
+}
