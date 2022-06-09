@@ -1,7 +1,7 @@
 /**
  * Two-pointer method to find two-sum and to return idxs when found
  * TC: O(N)     -> each element visited only once
- * SC: O(1)
+ * SC: O(1)     -> ans[] not considered. still it's of constant size 2
  */
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
